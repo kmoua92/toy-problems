@@ -15,5 +15,14 @@
  */
 
 var leftRotation = function leftRotation(array, d) {
-  
+  var result = [];
+  var n = array.length;
+
+  array.forEach(function (number, index) {
+    var newIndex = index - d < 0 ? index - d + n : index - d;
+
+    result[newIndex] = number;
+  });
+
+  return result;
 };
