@@ -16,6 +16,11 @@
   - (cleanup) ...
   - (test) ...
   - (doc) ...
+1. To make a new toy problem:
+  - Create a new directory at the root level.
+  - Add a file with the toy problem in the new directory. Use camelCase.
+  - Add a file with tests for the toy problem in the new directory. The name of this file should be the name of the test file with 'Spec' appended to it (e.g. leftRotation.js and leftRotationSpec.js).
+  - Add additional script tags to the SpecRunner.html file to import the new toy problem file and the new test file in their respective locations.
 1. When you've finished with your fix or feature, Rebase upstream changes into your branch. submit a [pull request][]
    directly to master. Include a description of your changes.
 1. Your pull request will be reviewed by another maintainer. The point of code
