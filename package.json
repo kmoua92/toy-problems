@@ -1,0 +1,20 @@
+{
+  "name": "toy-problems",
+  "version": "1.0.0",
+  "description": "Practice toy problems for interview prep.",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjstromberg/toy-problems.git"
+  },
+  "author": "Michael Stromberg <michaeljstromberg@gmail.com> (linkedin.com/in/michaeljohnstromberg)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mjstromberg/toy-problems/issues"
+  },
+  "homepage": "https://github.com/mjstromberg/toy-problems#readme"
+}
