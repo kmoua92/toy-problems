@@ -9,9 +9,9 @@ describe('dictionariesAndMaps', function() {
   });
 
   it('should return correct result', function() {
-    var result = dictionariesAndMaps(5);
+    var result = dictionariesAndMaps(3, phoneNumbersString, ['sam', 'edward', 'harry']);
 
-    expect(result).to.be.eql(['sam=99912222', 'Nof found', 'harry=12299933']);
+    expect(result).to.be.eql(['sam=99912222', 'Not found', 'harry=12299933']);
   });
 
   it('should handle an empty phoneNumbersString', function() {

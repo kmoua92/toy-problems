@@ -22,5 +22,23 @@
  */
 
 var dictionariesAndMaps = function dictionariesAndMaps(n, phoneNumbersString, queries) {
+  var inputArray = phoneNumbersString.split('\n');
+  var phoneBook = {};
+  var namePhoneArray = [];
+  var result = [];
 
+  for (var i = 0; i < n; i++) {
+    namePhoneArray = inputArray[i].split(' ');
+    phoneBook[ namePhoneArray[0] ] = namePhoneArray[1];
+  }
+  
+  for (var j = 0; j < queries.length; j++) {
+    if ( phoneBook[ queries[j] ] ) {
+      result.push( queries[j] + '=' + phoneBook[ queries[j] ] );
+    } else {
+      result.push('Not found');
+    }
+  }
+
+  return result;
 };
