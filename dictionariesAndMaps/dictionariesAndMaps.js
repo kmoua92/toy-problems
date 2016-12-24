@@ -11,12 +11,12 @@
  *
  * Example:
  *
- * var phoneNumberString = 
+ * var phoneNumbersString = 
  *   'sam 99912222
  *    tom 11122222
  *    harry 12299933';
  * 
- * dictionariesAndMaps(3, phoneNumberString, ['sam', 'edward', 'harry'])
+ * dictionariesAndMaps(3, phoneNumbersString, ['sam', 'edward', 'harry'])
  * // returns --> ['sam=99912222', 'Nof found', 'harry=12299933']
  * 
  */
