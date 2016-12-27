@@ -17,5 +17,17 @@
  */
 
 var diagonalDifference = function diagonalDifference(matrix) {
-  
+  var primaryIndex = 0;
+  var secondaryIndex = matrix.length - 1;
+  var primarySum = 0;
+  var secondarySum = 0;
+
+  for (var i = 0; i < matrix.length; i++) {
+    primarySum += matrix[i][primaryIndex];
+    secondarySum += matrix[i][secondaryIndex];
+    primaryIndex++;
+    secondaryIndex--;
+  }
+
+  return Math.abs(primarySum - secondarySum);
 };
