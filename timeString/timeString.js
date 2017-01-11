@@ -20,6 +20,35 @@ package com.cj.interview.prep;
 
 */
 
-var timeStringApplication = function timeStringApplication(input) {
-  
+var timeString = function timeString(input) {
+  // Declare variables and calculate total seconds
+  var inputArray = input.split(' ');
+  var seconds = inputArray.reduce(function(sum, fullTimeString) {
+    var numberArray = fullTimeString.split(':').map(function(partialTimeString) {
+      return +partialTimeString;
+    });
+
+    return sum + numberArray[0] * 60 + numberArray[1];
+  }, 0);
+  var resultArray = [0, 0, 0];
+
+  // Populate resultArray with proper quantities
+  if (seconds > 3600) {
+    var hours = Math.floor(seconds / 3600);
+    resultArray[0] = hours;
+    seconds -= hours * 3600;
+  }
+  if (seconds > 60) {
+    var minutes = Math.floor(seconds / 60);
+    resultArray[1] = minutes;
+    seconds -= minutes * 60;
+  }
+  resultArray[2] = seconds;
+
+  // Convert resultArray into string
+  return resultArray.map(function(timeNumber, index) {
+    if (index === 0) { return '' + timeNumber; }
+    if (index === 1) { return timeNumber < 10 ? '0' + timeNumber : '' + timeNumber; }
+    if (index === 2) { return timeNumber < 10 ? '0' + timeNumber : '' + timeNumber; }
+  }).join(':');
 };
