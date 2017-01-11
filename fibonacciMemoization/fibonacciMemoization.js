@@ -16,6 +16,14 @@
  * 
  */
 
-var fibonacciMemoization = function fibonacciMemoization(n) {
-  
+var fibonacciMemoization = function fibonacciMemoization(n, history) {
+  if (n === 0 || n === 1) { return n; }
+
+  history = history || {};
+
+  if (!history[n]) {
+    history[n] = fibonacciMemoization(n - 1, history) + fibonacciMemoization(n - 2, history);
+  }
+
+  return history[n];
 };

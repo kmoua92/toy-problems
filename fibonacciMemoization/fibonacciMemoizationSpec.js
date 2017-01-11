@@ -19,9 +19,12 @@ describe('fibonacciMemoization', function() {
   });
 
   xit('should have O(n) time complexity', function() {
-    var spy = sinon.spy(fibonacciMemoization);
-    var result = fibonacciMemoization(5);
+    var originalFunction = fibonacciMemoization;
+    fibonacciMemoization = sinon.spy(fibonacciMemoization);
+    fibonacciMemoization(5);
 
-    expect(spy.callCount).to.be.eql(9);
+    expect(fibonacciMemoization.callCount).to.be.eql(9);
+
+    fibonacciMemoization = originalFunction;
   });
 });
