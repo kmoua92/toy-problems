@@ -13,9 +13,12 @@ describe('magicIndex', function() {
   });
 
   xit('should have less than O(n) time complexity', function() {
-    var spy = sinon.spy(magicIndex);
-    var result = magicIndex([-10, -5, 0, 3, 5, 25]);
+    var originalFunction = magicIndex;
+    magicIndex = sinon.spy(magicIndex);
+    magicIndex([-10, -5, 0, 3, 5, 25]);
 
-    expect(spy.callCount).to.be.below(6);
+    expect(magicIndex.callCount).to.be.below(6);
+
+    magicIndex = originalFunction;
   }); 
 });
