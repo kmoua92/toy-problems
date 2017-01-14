@@ -12,9 +12,10 @@ describe('magicIndex', function() {
     expect(result).to.be.eql(3);
   });
 
-  it('should handle an array with non-distinct values', function() {
-    var result = magicIndex([-10, -5, 0, 3, 3, 5, 25]);
+  xit('should have less than O(n) time complexity', function() {
+    var spy = sinon.spy(magicIndex);
+    var result = magicIndex([-10, -5, 0, 3, 5, 25]);
 
-    expect(result).to.be.eql(3);
-  });  
+    expect(spy.callCount).to.be.below(6);
+  }); 
 });
