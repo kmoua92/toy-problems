@@ -10,5 +10,8 @@
  */
 
 var magicIndex = function magicIndex(array) {
-
+  var middleIndex = Math.floor(array.length / 2);
+  if (middleIndex === array[middleIndex]) { return middleIndex; }
+  if (middleIndex > array[middleIndex]) { return magicIndex( array.slice(middleIndex + 1) ); }
+  return magicIndex( array.slice(0, middleIndex) );
 };
