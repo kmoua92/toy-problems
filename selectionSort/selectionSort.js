@@ -10,5 +10,12 @@
  */
 
 var selectionSort = function selectionSort(array) {
-
+  // store sortedSubarray, unsortedSubarray, and currentSmallest variables
+  // while length of sortedSubarray is less than length of array
+    // loop through unsortedSubarray
+      // if currentValue is null or is less than currentSmallest
+        // set currentSmallest to currentValue
+    // append currentSmallest to sortedSubarray
+    // reset currentValue to null
+  // return sortedSubArray
 };
