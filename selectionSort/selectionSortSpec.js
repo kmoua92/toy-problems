@@ -1,8 +1,8 @@
 describe('selectionSort', function() {
 
   var checkIfSorted = function(array) {
-    return array.reduce(function(isSorted, number, index, array) {
-      return isSorted && number >= array[index - 1];
+    return array.reduce(function(isSorted, number, index, origArray) {
+      return isSorted && (index === 0 || number >= origArray[index - 1]);
     }, true);
   };
 
@@ -27,6 +27,6 @@ describe('selectionSort', function() {
   it('should handle empty array', function() {
     var result = selectionSort([]);
 
-    expect(result).to.be.null;
+    expect(result).to.be.eql([]);
   });
 });
