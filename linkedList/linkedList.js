@@ -18,21 +18,37 @@
 
 
 var LinkedList = function() {
-
+  this.head = null;
+  this.tail = null;
 };
 
-LinkedList.prototype.addToTail = function() {
+LinkedList.prototype.addToTail = function(value) {
+  var oldTail = this.tail;
+  var newTail = this.makeNode(value);
 
+  this.tail = newTail;
+  oldTail ? oldTail.next = newTail : this.head = newTail;
 };
 
 LinkedList.prototype.removeHead = function() {
+  var oldHead = this.head;
+  var newHead = this.head !== this.tail ? this.head.next : null;
 
+  this.head = newHead;
+  this.tail = !newHead ? null : this.tail;
+  return !oldHead ? null : oldHead.value;
 };
 
-LinkedList.prototype.contains = function() {
+LinkedList.prototype.contains = function(value, head) {
+  head = head === undefined ? this.head : head;
 
+  if (!head) { return false; }
+  return head.value === value ? true : this.contains(value, head.next);
 };
 
-LinkedList.prototype.makeNode = function() {
-  
+LinkedList.prototype.makeNode = function(value) {
+  return {
+    value: value,
+    next: null
+  };
 };
