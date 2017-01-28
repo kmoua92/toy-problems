@@ -41,5 +41,12 @@
  */
 
 var reverseWords = function reverseWords(string) {
-
+  // split input string into wordLines array
+  // instantiate result variable
+  // loop through each wordLine in the wordLines array
+    // split each line by space
+    // reverse that array
+    // join that array with 'Case #x:'
+    // push to result array
+  // return result joined by new line
 };
