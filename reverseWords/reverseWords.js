@@ -42,11 +42,17 @@
 
 var reverseWords = function reverseWords(string) {
   // split input string into wordLines array
+  var wordLines = string.split('\n').slice(1);
   // instantiate result variable
+  var result = [];
   // loop through each wordLine in the wordLines array
+  wordLines.forEach(function(wordLine, lineIndex) {
     // split each line by space
     // reverse that array
     // join that array with 'Case #x:'
     // push to result array
+    result.push(`Case #${lineIndex + 1}: ${wordLine.split(' ').reverse().join(' ')}`);
+  });
   // return result joined by new line
+  return result.join('\n');
 };
