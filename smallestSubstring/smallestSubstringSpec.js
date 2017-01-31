@@ -17,7 +17,7 @@ describe('smallestSubstring', function() {
 
   it('should return first substring if there are multiple shortest', function() {
     var arr = ['a', 'b', 'c'];
-    var str = 'ccbcab'
+    var str = 'ccbcab';
     var result = smallestSubstring(arr, str);
 
     expect(result).to.be.equal('bca');
