@@ -8,6 +8,6 @@
  * 
  */
 
-var largestSmallerBSTKey = function largestSmallerBSTKey(root, x) {
+var largestSmallerBSTKey = function largestSmallerBSTKey(root, x, largestValidKey) {
 
 };
