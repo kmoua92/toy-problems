@@ -10,9 +10,14 @@
 
 var largestSmallerBSTKey = function largestSmallerBSTKey(root, x, largestValidKey) {
   // if largestValidKey is undefined set to null
+  largestValidKey = largestValidKey || null;
   // if value at root is greater than or equal to x
+  if (root.value >= x) {
     // if left property in root is null return largestValidKey
     // else return invocation of largestSmallerBSTKey with left property
+    return !root.left ? largestValidKey : largestSmallerBSTKey(root.left, x, largestValidKey);
+  }
   // if right property in root is null return largestValidKey
   // else return invocation of largestSmallerBSTKey with right property and current root value
+  return !root.right ? largestValidKey : largestSmallerBSTKey(root.right, x, root.value);
 };
