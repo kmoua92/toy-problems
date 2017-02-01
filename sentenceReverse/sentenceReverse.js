@@ -15,5 +15,23 @@
  */
 
 var sentenceReverse = function sentenceReverse(array) {
-  
+  // reverse entire array
+  // initialize inWord variable with false
+  // initialize startIndex with null
+  // initialize endIndex with null
+  // loop through reversed array
+    // if current character is a non-space
+      // if inWord is false
+        // toggle inWord
+        // set startIndex to current index
+        // set endIndex to current index
+      // else
+        // set endIndex to current index
+    // else
+      // if inWord is true
+        // toggle inWord
+        // reverse word
+        // set startIndex to null
+        // set endIndex to null
+  // return array
 };
