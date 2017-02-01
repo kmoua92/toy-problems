@@ -95,8 +95,36 @@
  *
  */
 
-
+var merge = function(leftArr, rightArr) {
+  // initialize mergedArray variable with []
+  // initialize indexLeft variable with 0
+  // initialize indexRight variable with 0
+  // while mergedArray length is less than combined lengths of leftArr and rightArr
+    // if indexRight is greater than or equal to rightArr length
+    // or value in leftArr at indexLeft is greater than or equal to value in rightArr at indexRight
+      // push value in leftArr at indexLeft into mergedArray
+      // increment indexLeft by 1
+    // else
+      // push value in rightArr at indexRight into mergedArray
+      // increment indexRight by 1
+  // return mergedArray
+};
 
 var mergeSort = function(array) {
-  // Your code here.
+  // split array into sorted subarrays
+  // initialize sortedSubarrays variable []
+  // initialize currentSubarray variable with []
+  // loop through array
+    // if currentSubarray length is greater than 1 and current value is less than last value in currentSubarray
+      // push currentSubarray into sortedSubarrays
+    // push current value into current
+  
+  // while there are still items in sortedSubarrays
+    // merge the sorted subarrays
+    // initialize newSortedSubarrays
+    // loop through items in sortedSubarrays
+      // merge pairs
+    // set sortedSubarrays equal to newSortedSubarrays
+  
+  // return sortedSubarrays
 };
