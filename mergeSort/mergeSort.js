@@ -97,34 +97,73 @@
 
 var merge = function(leftArr, rightArr) {
   // initialize mergedArray variable with []
+  var mergedArray = [];
   // initialize indexLeft variable with 0
+  var indexLeft = 0;
   // initialize indexRight variable with 0
+  var indexRight = 0;
   // while mergedArray length is less than combined lengths of leftArr and rightArr
+  while (mergedArray.length < leftArr.length + rightArr.length) {
     // if indexRight is greater than or equal to rightArr length
     // or value in leftArr at indexLeft is greater than or equal to value in rightArr at indexRight
+    if (indexRight >= rightArr.length || leftArr[indexLeft] <= rightArr[indexRight]) {
       // push value in leftArr at indexLeft into mergedArray
+      mergedArray.push(leftArr[indexLeft]);
       // increment indexLeft by 1
+      indexLeft++;
     // else
+    } else {
       // push value in rightArr at indexRight into mergedArray
+      mergedArray.push(rightArr[indexRight]);
       // increment indexRight by 1
+      indexRight++;
+    }
+  }
   // return mergedArray
+  return mergedArray;
 };
 
 var mergeSort = function(array) {
   // split array into sorted subarrays
   // initialize sortedSubarrays variable []
+  var sortedSubarrays = [];
   // initialize currentSubarray variable with []
+  var currentSubarray = [];
   // loop through array
+  for (var i = 0; i < array.length; i++) {
     // if currentSubarray length is greater than 1 and current value is less than last value in currentSubarray
+    if (currentSubarray.length > 0 && array[i] < currentSubarray[currentSubarray.length - 1]) {
       // push currentSubarray into sortedSubarrays
-    // push current value into current
+      sortedSubarrays.push(currentSubarray);
+      // clear currentSubarray
+      currentSubarray = [];
+    }
+    // push current value into currentSubarray
+    currentSubarray.push(array[i]);
+  }
+  // push the last currentSubarray to sortedSubarrays
+  sortedSubarrays.push(currentSubarray);
   
-  // while there are still items in sortedSubarrays
+  // while there are at least 2 items in sortedSubarrays
+  while (sortedSubarrays.length > 1) { 
     // merge the sorted subarrays
     // initialize newSortedSubarrays
+    var newSortedSubarrays = [];
     // loop through items in sortedSubarrays
-      // merge pairs
+    for (var i = 0; i <= sortedSubarrays.length / 2; i += 2) {
+      // merge pair
+      var mergedPair = merge(sortedSubarrays[i], sortedSubarrays[i + 1]);
+      // push merged pair to newSortedSubarrays
+      newSortedSubarrays.push(mergedPair);
+    }
+    // if sortedSubarrays length is odd
+    if (sortedSubarrays.length % 2) {
+      // push last item in sortedSubarrays to newSortedSubarrays
+      newSortedSubarrays.push(sortedSubarrays[sortedSubarrays.length - 1]);
+    }
     // set sortedSubarrays equal to newSortedSubarrays
-  
-  // return sortedSubarrays
+    sortedSubarrays = newSortedSubarrays;
+  }
+  // return sortedSubarrays inner array
+  return sortedSubarrays[0];
 };
