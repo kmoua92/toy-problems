@@ -14,6 +14,6 @@
  * 
  */
 
-var sentenceReverse = function sentenceReverse() {
+var sentenceReverse = function sentenceReverse(array) {
   
 };
