@@ -25,6 +25,14 @@ var makeHashTable = function() {
   var storage = [];
   var storageLimit = 4;
   var size = 0;
+  var resize = function resize(newSize) {
+    // initialize a tempStorage variable to []
+    // loop through storage
+      // loop through each tuple
+        // get hash from key in tuple
+          // add tuple to tempStorage
+    // set storage equal to tempStorage
+  };
   
   result.insert = function(key, value) {
     // get hashed key
