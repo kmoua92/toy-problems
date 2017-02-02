@@ -24,5 +24,12 @@
  */
 
 var numberOfIslands = function numberOfIslands(matrix) {
-
+  // intialize islandCount variable to 0
+  // loop through each row
+    // loop through each column
+      // if value at current location is 1
+        // increment islandCount by 1
+        // toggle value to 0
+        // check adjacent values for 1s and toggle them
+  // return islandCount
 };
