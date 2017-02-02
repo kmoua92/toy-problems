@@ -26,16 +26,46 @@ var makeHashTable = function() {
   var storageLimit = 4;
   var size = 0;
   
-  result.insert = function(/*...*/) {
-    // TODO: implement `insert`
+  result.insert = function(key, value) {
+    // get hashed key
+    // if storage has value at hash
+      // initialize foundMatch to false
+      // loop through array at hash
+        // if key in tuple matches key
+          // overwrite value in tuple with value
+          // toggle foundMatch
+      // if foundMatch if false
+        // push key, value tuple to array at hash
+    // else
+      // push array with single key, value tuple
+    // increment size by 1
+
+    // if size is greater than 3/4th of storageLimit
+      // resize storage
   };
 
-  result.retrieve = function(/*...*/) {
-    // TODO: implement `retrieve`
+  result.retrieve = function(key) {
+    // get hashed key
+    // if storage has value at hash
+      // loop through array at hash
+        // if key in tuple matches key
+          // return value in tuple
+    // return null
   };
 
-  result.remove = function(/*...*/) {
-    // TODO: implement `remove`
+  result.remove = function(key) {
+    // get hashed key
+    // initialize value with null
+    // if storage has value at hash
+      // loop through array at hash
+        // if key in tuple matches key
+          // set value to the value in tuple
+          // delete tuple
+
+    // if size is less than 1/4th of storageLimit
+      // resize storage
+
+    // return value
   };
 
   return result;
