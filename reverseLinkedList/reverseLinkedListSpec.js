@@ -66,6 +66,24 @@ describe('reverseLinkedList', function() {
     reverseLinkedList(linkedList);
     var nodes = linkedList.returnAllNodes();
 
-    expect(nodes).to.be.equal([1, 2, 3]);
+    expect(nodes).to.be.eql([1, 2, 3]);
+  });
+
+  it('should reverse a long Linked List', function() {
+    var linkedList = new LinkedList;
+    linkedList.addToTail(1);
+    linkedList.addToTail(2);
+    linkedList.addToTail(3);
+    linkedList.addToTail(4);
+    linkedList.addToTail(5);
+    linkedList.addToTail(6);
+    linkedList.addToTail(7);
+    linkedList.addToTail(8);
+    linkedList.addToTail(9);
+    linkedList.addToTail(10);
+    reverseLinkedList(linkedList);
+    var nodes = linkedList.returnAllNodes();
+
+    expect(nodes).to.be.eql([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   });
 });
