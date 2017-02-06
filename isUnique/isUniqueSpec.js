@@ -1,7 +1,7 @@
 describe('isUnique', function() {
 
   it('should return a boolean', function() {
-    var result = isUnique(exampleArr, exampleStr);
+    var result = isUnique('test');
 
     expect(result).to.be.a('boolean');
   });
