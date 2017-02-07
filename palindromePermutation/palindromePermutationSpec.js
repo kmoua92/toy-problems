@@ -18,7 +18,7 @@ describe('palindromePermutation', function() {
     expect(result).to.be.false;
   });
 
-  it('should handle spaces', function() {
+  it('should handle spaces and capitals', function() {
     var result = palindromePermutation('Tact Coa');
 
     expect(result).to.be.true;
