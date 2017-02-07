@@ -1,13 +1,13 @@
 describe('urlify', function() {
 
   it('should return a string', function() {
-    var result = urlify('Mr John Smith   ', 13);
+    var result = urlify('Mr John Smith    ', 13);
 
     expect(result).to.be.a('string');
   });
 
   it('should return correct result for example', function() {
-    var result = urlify('Mr John Smith   ', 13);
+    var result = urlify('Mr John Smith    ', 13);
 
     expect(result).to.be.equal('Mr%20John%20Smith');
   });
@@ -19,7 +19,7 @@ describe('urlify', function() {
   });
 
   it('should handle all spaces', function() {
-    var result = urlify('   ', 3);
+    var result = urlify('         ', 3);
 
     expect(result).to.be.eql('%20%20%20');
   });
