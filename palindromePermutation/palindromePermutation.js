@@ -13,5 +13,25 @@
  */
 
 var palindromePermutation = function palindromePermutation(string) {
+  // iterate through string
+  // map character counts
+  // if all or all but one counts are even return true, otherwise false
 
+  var map = {};
+  var oddCounts = 0;
+  var char = '';
+
+  for (var i = 0; i < string.length; i++) {
+    char = string.charAt(i).toLowerCase();
+
+    if (char !== ' ') {
+      map[char] = map[char] ? map[char] + 1 : 1;
+    }
+  }
+
+  for (var key in map) {
+    oddCounts = map[key] % 2 === 0 ? oddCounts : oddCounts + 1;
+  }
+
+  return string.length > 0 && oddCounts < 2;
 };
