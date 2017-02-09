@@ -4,6 +4,6 @@
  * 
  */
 
-var returnKthToLast = function returnKthToLast(head) {
+var returnKthToLast = function returnKthToLast(head, k) {
 
 };
