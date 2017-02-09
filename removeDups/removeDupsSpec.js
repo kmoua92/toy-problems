@@ -30,7 +30,7 @@ describe('removeDups', function() {
     list.addToTail(1);
     list.addToTail(1);
     list.addToTail(4);
-    var result = checkForDuplicates(list.head);
+    var result = checkForDuplicates(removeDups(list.head));
 
     expect(result).to.be.false;
   });
@@ -39,7 +39,7 @@ describe('removeDups', function() {
     var list2 = new LinkedList();
     list2.addToTail(1);
     list2.addToTail(4);
-    var result = checkForDuplicates(list2.head);
+    var result = checkForDuplicates(removeDups(list2.head));
 
     expect(result).to.be.false;
   });
